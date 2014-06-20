@@ -1,11 +1,15 @@
 package com.fjrodriguez.mastermind1;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -38,51 +42,70 @@ public class MyActivity extends Activity {
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
-    public void partidaNueva(View v) {
+    public void partidaNueva(View view) {
         mastermind.generarSolucion();
         Log.v("paco", mastermind.toString());
     }
 
-    public void jugar (View v) {
+    public void jugar (View view) {
+        Intent i = new Intent(this, Acercade.class);
+        startActivity(i);
+    }
 
+    public void pulsado_boton_colores (View view) {
+        Color color;
+        // Buscar el boton que ha generado el evento.
+        Button boton = (Button) findViewById(view.getId());
+        // Recuperar el color background de dicho objeto.
+        ColorDrawable buttonColor = (ColorDrawable) boton.getBackground();
+        int colorId = buttonColor.getColor();
+        // TODO: Poner colores al resto de botones de jugada.
+        Button boton_jugada = (Button) findViewById(R.id.boton_jugar_1);
+        boton_jugada.setBackgroundColor(colorId);
     }
 }
 
 class Mastermind {
 
     private String[] solucion = new String[4];
+    private int indiceJugada = 0;
     private String[] jugada = new String[4];
     private String[] colores = {"#0000FF", "#008000", "#FF0000", "#FFA500", "#FF00FF",
             "#000000", "#FFFF00", "#C0C0C0"};
-    private Random r = new Random();
+    private static Random r = new Random();
 
     public Mastermind () {
 
     }
 
-    private String extraerColor (int i) {
+    private void cambiarPosicion(String[] array, int i, int j) {
         String tmpString;
 
-        tmpString = colores[i];
-        colores[i] = colores[colores.length-1];
-        colores[colores.length-1] = tmpString;
-
-        return tmpString;
+        tmpString = array[i];
+        array[i] = array[j];
+        array[j] = tmpString;
     }
 
     public void generarSolucion () {
+        int indiceColores;
 
-        for (int i = 0, j= 8; i < 4 ; i++, j--)
+        for (int i = 0, j = 8; i < 4; i++, j--) {
             // Selecciona aleatoriamente una posicion del array colores.
             // Guardo el color seleccionado en el array solución.
-            solucion[i] = extraerColor(r.nextInt(j));
+            indiceColores = r.nextInt(j);
+            solucion[i] = colores[indiceColores];
+            cambiarPosicion(colores, indiceColores, j - 1);
+        }
     }
 
+    public void addColorJugada (String color) {
+        jugada[indiceJugada++] = color;
+    }
 
     @Override
     public String toString() {
         return "Mastermind{" +
-                "solucion=" + Arrays.toString(solucion) +
+                "colores=" + Arrays.toString(colores) +
                 '}';
     }
 }
