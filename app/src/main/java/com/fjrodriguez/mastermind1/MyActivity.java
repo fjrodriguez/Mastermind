@@ -53,7 +53,7 @@ public class MyActivity extends Activity {
     }
 
     public void pulsado_boton_colores (View view) {
-        Color color;
+
         // Buscar el boton que ha generado el evento.
         Button boton = (Button) findViewById(view.getId());
         // Recuperar el color background de dicho objeto.
@@ -62,6 +62,12 @@ public class MyActivity extends Activity {
         // TODO: Poner colores al resto de botones de jugada.
         Button boton_jugada = (Button) findViewById(R.id.boton_jugar_1);
         boton_jugada.setBackgroundColor(colorId);
+    }
+
+    public void pulsado_boton_jugada (View view) {
+
+        Button boton = (Button) findViewById(view.getId());
+        boton.setBackgroundColor(Color.BLACK);
     }
 }
 

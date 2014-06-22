@@ -65,22 +65,26 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/boton_jugar_1" />
+                android:id="@+id/boton_jugar_1"
+                android:onClick="pulsado_boton_jugada" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/boton_jugar_2" />
+                android:id="@+id/boton_jugar_2"
+                android:onClick="pulsado_boton_jugada" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/boton_jugar_3" />
+                android:id="@+id/boton_jugar_3"
+                android:onClick="pulsado_boton_jugada" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/boton_jugar_4" />
+                android:id="@+id/boton_jugar_4"
+                android:onClick="pulsado_boton_jugada" />
 
         </LinearLayout>
 
@@ -138,8 +142,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_azul"
-            android:background="#0000FF"
+            android:id="@+id/button_color1"
+            android:background="@+string/color1"
             android:paddingRight="0dp"
             android:layout_weight="1"
             android:onClick="pulsado_boton_colores"/>
@@ -147,8 +151,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button9"
-            android:background="#008000"
+            android:id="@+id/button_color2"
+            android:background="@+string/color2"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -157,8 +161,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button11"
-            android:background="#FF0000"
+            android:id="@+id/button_color3"
+            android:background="@+string/color3"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -167,8 +171,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button10"
-            android:background="#FFA500"
+            android:id="@+id/button_color4"
+            android:background="@+string/color4"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -177,8 +181,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button12"
-            android:background="#FF00FF"
+            android:id="@+id/button_color5"
+            android:background="@+string/color5"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -187,8 +191,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button13"
-            android:background="#000000"
+            android:id="@+id/button_color6"
+            android:background="@+string/color6"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -197,8 +201,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button14"
-            android:background="#FFFF00"
+            android:id="@+id/button_color7"
+            android:background="@+string/color7"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:layout_weight="1"
@@ -207,8 +211,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button15"
-            android:background="#C0C0C0"
+            android:id="@+id/button_color8"
+            android:background="@+string/color8"
             android:layout_marginTop="8dp"
             android:paddingRight="0dp"
             android:onClick="pulsado_boton_colores"/>
